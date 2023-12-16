@@ -1,0 +1,170 @@
+[
+  {
+    "objectID": "AcademiaTM.html",
+    "href": "AcademiaTM.html",
+    "title": "r/Academia Corpus",
+    "section": "",
+    "text": "r/Academia is also a subreddit where academics engage in conversations about issues in academia. The group is self described as ““An online community for sharing academic works and discussion of issues and events relating to academia and the related political, economical, and social structures.”\nNote: The methods I described on the r/techicalwriting page are the same methods I used here so I do not go into as much detail on this page and do not repeat the codes."
+  },
+  {
+    "objectID": "AcademiaTM.html#about-racademia",
+    "href": "AcademiaTM.html#about-racademia",
+    "title": "r/Academia Corpus",
+    "section": "",
+    "text": "r/Academia is also a subreddit where academics engage in conversations about issues in academia. The group is self described as ““An online community for sharing academic works and discussion of issues and events relating to academia and the related political, economical, and social structures.”\nNote: The methods I described on the r/techicalwriting page are the same methods I used here so I do not go into as much detail on this page and do not repeat the codes."
+  },
+  {
+    "objectID": "AcademiaTM.html#scraping",
+    "href": "AcademiaTM.html#scraping",
+    "title": "r/Academia Corpus",
+    "section": "Scraping",
+    "text": "Scraping\nLike I did for r/technicalwriting, I scraped from this subreddit using the RedditExtractoR package. The keywords for this scrape were “AI and Writing” right from the onset. This scrape produced 23 initial threads and 389 comments which I cleaned to retain just the comments column and went ahead to process the data."
+  },
+  {
+    "objectID": "AcademiaTM.html#manual-reading-of-corpus",
+    "href": "AcademiaTM.html#manual-reading-of-corpus",
+    "title": "r/Academia Corpus",
+    "section": "Manual Reading of Corpus",
+    "text": "Manual Reading of Corpus\nI manually read through the comments corpus for this subreddit and realized, unsurprisingly, that a few comments were not really about AI and writing. Not wanting these irrelevant comments to skew my results the wrong way, I noted the specific rows of columns which I did not want in my data and excluded them using the code ChatGPT showed me. This manual perusal and exclusion of rows of comments left me with 356 rows of comments which I used for the analysis.\n```{r}\nAiwritcommentsTM &lt;- read_csv(\"data_out/Aiwritcomms_select.csv\")\n\nglimpse(AiwritcommentsTM)\n\n\nrows_to_exclude &lt;- c(3, 5, 6, 7, 8, 10, 15, 17, 20, 26, 29, 30, 60, 360, 361, 362, 363, 364, 365, 366, 367, 369, 371, 372, 373, 374, 375, 376, 377, 378, 383, 388, 389)  \n\n# Exclude specific row numbers\nAiwritcommentsTM &lt;- AiwritcommentsTM[-rows_to_exclude, ]\n\n```"
+  },
+  {
+    "objectID": "AcademiaTM.html#preprocessing",
+    "href": "AcademiaTM.html#preprocessing",
+    "title": "r/Academia Corpus",
+    "section": "Preprocessing",
+    "text": "Preprocessing\nIn preparing this data for the topic modeling analysis I first created a corpus of the comments column. Next, I created word tokens from the data and removed stopwords, punctuations and urls. I then created a document feature matrix (dfm) of the tokens. After this step I inspected the topwords and noticed certain words like “can”, “like”, “just”, and “will” being represented as topwords. From experience, these words could dominate my topics and skew my results so I went back to the tokens and excluded those words as well. Finally, I converted the dfm to stm."
+  },
+  {
+    "objectID": "AcademiaTM.html#k-selection",
+    "href": "AcademiaTM.html#k-selection",
+    "title": "r/Academia Corpus",
+    "section": "K selection",
+    "text": "K selection\nMy selection of K, which is the number of topics, was quite random. I tried to model K but I could not get the code to work so I randomly run the topic model with K set to 40, 60 and 80 and chose the K that produced the most meaningful and interesting topics. Below are images of the top 20 topics produced by each of these Ks.\n\nK=40\n\n\n\nK=60\n\n\n\nK=80"
+  },
+  {
+    "objectID": "AcademiaTM.html#topics-of-interest",
+    "href": "AcademiaTM.html#topics-of-interest",
+    "title": "r/Academia Corpus",
+    "section": "Topics of Interest",
+    "text": "Topics of Interest\nMy interpretation of these topics took the same form as that of the topics from r/technicalwriting. I considered both the topwords and FREX words and consulted the corpus for context.\nTopic 26 - Specific ways students are using AI/Chatgpt\nHighest Prob: chatgpt, using, ais, papers, students, much, used, research, text, use, answers, style, editing, provide, \n     FREX: ais, chatgpt, style, provide,  available, summarizing, efficient, manage, amp, wrote, editing, critique, order \n\nTopic 16 - AI use and plagiarism\nHighest Prob: plagiarism, grammarly, prompt, gpt, basically, academic, work, time, little, anyway, give, say, bad, write, used \n     FREX: grammarly, prompt, basically, plagiarism, gpt, little, anyway, ok, services, create, academic, uni, bad, come\n\nTopic 22 -  Unreliability of AI\n Highest Prob: ai, written, paper, worth, many, write, papers, makes, though, errors, publishers, nothing, fact, chatgpt, comment \n     FREX: publishers, worth, comment, written, bs, many, paper, _decrease_, variable"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "TechWritTM.html",
+    "href": "TechWritTM.html",
+    "title": "r/Technicalwriting Corpus",
+    "section": "",
+    "text": "This is a subreddit with a little over 70,000 members. The subreddit is self-described as “For people who take the unbelievably complicated things that scientists and engineers devise and make it understandable for non-technical people.”"
+  },
+  {
+    "objectID": "TechWritTM.html#about-rtechnicalwriting",
+    "href": "TechWritTM.html#about-rtechnicalwriting",
+    "title": "r/Technicalwriting Corpus",
+    "section": "",
+    "text": "This is a subreddit with a little over 70,000 members. The subreddit is self-described as “For people who take the unbelievably complicated things that scientists and engineers devise and make it understandable for non-technical people.”"
+  },
+  {
+    "objectID": "TechWritTM.html#initial-scrape-unsuccessful",
+    "href": "TechWritTM.html#initial-scrape-unsuccessful",
+    "title": "r/Technicalwriting Corpus",
+    "section": "Initial Scrape (Unsuccessful)",
+    "text": "Initial Scrape (Unsuccessful)\nI conducted an initial scrape of coments from r/technicalwriting with the Keyword “AI”, and the period set to “All”. 87 threads and 997 comments were collected from this scrape. Working with this particular dataset, I realized that I was not really getting any specific topics, a problem I traced to my keyword term. I had assumed that a subreddit on technical writing would automatically be talking about AI in the context of writing so I did not find it needful to use “writing” as a keyword. However, with the results I was getting, I realized my mistake. AI is a broad topic and conversations on AI could be about a lot of things other than writing and, Technical Writers, contrary to what the name of the occupation suggests do more than just writing.\n```{r}\nTW &lt;- find_thread_urls(\n  subreddit = \"technicalwriting\",\n  keywords = \"AI\",\n  sort_by = \"comments\",\n  period = \"All\"\n)\n\n```\n\nSubsetting Initial Data With Grep\nAfter I realized what had gone wrong with this data, I tried to create a subset of the data using the “grep” function.This was not easy because I could not even decide on which pattern of words to use as my research question itself is not the most specific. I tried to use words that express opnion like “helpful”, “bad”, “ethic”, “good”, among others but it was just not working so I decided to put this data set aside and go in for another scrape.\n```{r}\nTWsubset &lt;- grep(pattern = \"use AI|influence|view|opinion|useful|bad|ethic|helpful\", CommentsTM$comment, value = TRUE)\nView(TWsubset)\n```"
+  },
+  {
+    "objectID": "TechWritTM.html#second-scrape-successful",
+    "href": "TechWritTM.html#second-scrape-successful",
+    "title": "r/Technicalwriting Corpus",
+    "section": "Second Scrape (Successful)",
+    "text": "Second Scrape (Successful)\nFor the second scrape I used “AI” and “Writing” as my keywords and set the period set to “Year” which produced 36 threads and 540 comments. Also, I conducted my analysis with only comments not threads as that is where I could find different perspectives on the topic. Next, I conducted a first cleaning of the data to retain just the comments, comment_id, and url columns but i ended up only needing the comments column. I initially planned to bind the comments from both subreddits but I did not so I did not really need the url column as well. With my data cleaned up, I saved it out as a CSV file, read it into a different Rscript, processed the data and run another topic model analysis. Once again,the topics were not really meaningful and certain irrelevant words like modal verbs were dominating the topics, indicating to me that I still had to clean up the data some more. Below is a visual of the said topics.\n Code used for scraping, cleaning and saving comments from r/technicalwriting\n```{r}\n##Scrape threads and extract comments\nTW &lt;- find_thread_urls(\n  subreddit = \"technicalwriting\",\n  keywords = \"AI,writing\",\n  sort_by = \"comments\",\n  period = \"year\"\n)\nglimpse(TW)\n\nTW_comments &lt;- get_thread_content(\n  TW$url\n)\n\n##Clean comments data to retain relevant columns\n\nTWcleam_select &lt;- TWclean1$comments %&gt;%\n  select(comment, comment_id, url)\n\nglimpse(TWcleam_select)\n\n##Save comments as a CSV file\nwrite.csv(TWcleam_select, \"data_out/TWcleam_select.csv\")\nsave(TWcleam_select, file = \"data_out/TWcleam_select.RData\")\n\n\n```"
+  },
+  {
+    "objectID": "TechWritTM.html#manual-reading-and-exclusion-of-irrelevant-rows",
+    "href": "TechWritTM.html#manual-reading-and-exclusion-of-irrelevant-rows",
+    "title": "r/Technicalwriting Corpus",
+    "section": "Manual Reading and Exclusion of Irrelevant Rows",
+    "text": "Manual Reading and Exclusion of Irrelevant Rows\nWith the realization that I was not getting specific and meaningful topics from the r/technicalwriting comments, I went in and read the comments manually and noted the rows of comments that had wandered too far from conversations on AI and writing. Next, with the help of ChatGPT, I wrote a code that excluded those irrelevant rows. In all, I excluded 284 rows of comments from the 540 comments I generated from the second scrape.\n```{r}\nCommentsTM &lt;- read_csv(\"data_out/TWcleam_select.csv\")\n\nglimpse(CommentsTM)\n\nrows_to_exclude &lt;- c(2, 3, 8, 21, 27, 28, 29, 31, 36, 58, 59, 60, 62, 65, 66, 67, 68, 74, 73, 75, 76, 77, 78, 79, 80, 83, 84, 86, 87, 88, 90, 91, 92, 93, 94, 95, 96, 97, 98, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141:233, 262, 271, 274, 276, 278, 280, 289:314, 421:485, 538, 537, 536, 533, 527, 526, 525, 524, 523, 521, 520, 516, 511, 512, 508, 504)  \n\n# Exclude specific row numbers\nCommentsTM &lt;- CommentsTM[-rows_to_exclude, ]\n```"
+  },
+  {
+    "objectID": "TechWritTM.html#preprocessing-and-topic-modeling",
+    "href": "TechWritTM.html#preprocessing-and-topic-modeling",
+    "title": "r/Technicalwriting Corpus",
+    "section": "Preprocessing and Topic Modeling",
+    "text": "Preprocessing and Topic Modeling\nAfter excluding those rows, I continued processing the data for topic modeling. This preprocessing included creating a corpus of the comments, tokenizing the corpus, removing stopwords, sparsing the tokens, and creating a document feature matrix of the tokens. I also excluded the irrelevant topwords, which included the modal verbs I mentioned earlier, so that they would not dominate the topics.\n```{r}\n### Create a corpus object from the \"comments\" column\ncommentcorpus &lt;- corpus(CommentsTM, text_field = \"comment\")\n\n# Create a tokens object (punctuations, stopwords, and irrelevant topwords removed)\n\ncommenttokens &lt;- tokens(commentcorpus, remove_punct = TRUE,remove_url = TRUE) %&gt;%\n  tokens_select(pattern = stopwords(\"en\"), selection = \"remove\")%&gt;%\n  tokens_select(pattern = c(\"can\", \"like\", \"just\", \"will\", \"t\", \"s\", \"m\", \"thanks\", \"don\", \"comment\", \"thank\", \"ux\", \"certification\", \"certificate\", \"tw\", \"technical\", \"tech\", \"job\",\"get\", \"writing\", \"deleted\"), selection = \"remove\")\n\n\n#We'll create the dfm.\ndfm_commenttoks &lt;- dfm(commenttokens) %&gt;% \n  dfm_trim(min_docfreq = 0.0001,\n           max_docfreq = 0.99, docfreq_type = \"prop\",\n           verbose = TRUE)\n\ntopfeatures(dfm_commenttoks, n = 20, scheme = \"docfreq\")\n\n\n### Convert dfm to stm\ndfm_stmcomments &lt;- convert(dfm_commenttoks, to = \"stm\", omit_empty = TRUE)\n\n```"
+  },
+  {
+    "objectID": "TechWritTM.html#choosing-k-for-topic-modeling",
+    "href": "TechWritTM.html#choosing-k-for-topic-modeling",
+    "title": "r/Technicalwriting Corpus",
+    "section": "Choosing K for Topic Modeling",
+    "text": "Choosing K for Topic Modeling\nI tried using Julia Silge’s code for modeling K to find the K value with the highest exclusivity and semantic coherence but try as I did, I just could not get it to work. So, I randomly run my topic model with the K value set at 40, 50, 60, 70 , 80 and even 100. I realized that the topics were not very meaningful at the lowest (40 and 50) and the highest (100) values. However, the topics at K= 60 and 80 also looked almost but not completely meaningful so I chose to go with a number that fell between these two, 70, and it worked. The topics at k=70 made sense and were also interesting to me so I decided to go with that. Below are visuals of the topics from the different K values.\n\nK=40\n\n\n\nK=70\n\n\n\nK=80"
+  },
+  {
+    "objectID": "TechWritTM.html#interpreting-topics",
+    "href": "TechWritTM.html#interpreting-topics",
+    "title": "r/Technicalwriting Corpus",
+    "section": "Interpreting Topics",
+    "text": "Interpreting Topics\nI interpreted the topics generated in the topic model by considering the highest probability words and the FREX. My interpretation of the topics was also influenced by my familiarity with some of the themes in the data. Through my manual reading of the data, I mentally noted some themes that were emerging for me so it was quite easy for me to identify those themes I had already noted when reading the topics generated by the Topic Model. I am going to use Topic 58 from the topic model as an example.\nTopic 58 \n     Highest Prob: company, ai, policy, chatgpt, legal, asked, document, made, issues, regex, decisions, list, write, work, sure \n     FREX: policy, regex, legal, decisions, company, issues, affected, app, emergency, journals, ndas, asked, list, copyright, poem \n\nWith this topic, words like “policy”, “ai”, and “company” made it easy for me to come to the basic conclusion that the topic was on company policies around technical writers’ use of AI. I then went into the corpus and searched “company policies” and from the conversations, I got the added layer of understanding that this topic is about AI policies of companies and how those policies are shaped by possible legal and copyright implications. My interpretation of all the other topics followed this same process.\n\nTopics of Interest and My Interpretation of Them\nTopic 51- Non-technical writers (Developers) are generating documentation on their own\n     Highest Prob: documentation, ai, code, api, generate, product, user, tool, devs, ask, think, manual, training, software, questions \n     FREX: devs, api, documentation, longer, explanations, ingest, jeopardy, watson, granted, code, generate, developers, manual, tool, parse \n\nTopic 58- Company policies on AI and the legal implications of AI use\n     Highest Prob: company, ai, policy, chatgpt, legal, asked, document, made, issues, regex, decisions, list, write, work, sure \n     FREX: policy, regex, legal, decisions, company, issues, affected, app, emergency, journals, ndas, asked, list, copyright, poem \n\nTopic 59- Top Words: Job security concerns\n     Highest Prob: replace, ai, writers, security, robots, take, need, still, said, thing, see, capable, tool, give, next \n     FREX: robots, replace, security, capable, redundant, ^, whole, laid, thing, next, managers, making, tool, industries, writers"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Themes in AI Discourse: r/Academia vs. r/Technicalwriting",
+    "section": "",
+    "text": "I set out to conduct a preliminary exploration of some themes that come up in conversations on AI in both the Academic and Technical Writing Industries using computational methods. This report describes the entire research experience right from what informed the selection of this research topic, to the methods used, some findings, and lessons."
+  },
+  {
+    "objectID": "index.html#introduction",
+    "href": "index.html#introduction",
+    "title": "Themes in AI Discourse: r/Academia vs. r/Technicalwriting",
+    "section": "",
+    "text": "I set out to conduct a preliminary exploration of some themes that come up in conversations on AI in both the Academic and Technical Writing Industries using computational methods. This report describes the entire research experience right from what informed the selection of this research topic, to the methods used, some findings, and lessons."
+  },
+  {
+    "objectID": "index.html#project-topic-selection",
+    "href": "index.html#project-topic-selection",
+    "title": "Themes in AI Discourse: r/Academia vs. r/Technicalwriting",
+    "section": "Project Topic Selection",
+    "text": "Project Topic Selection\nAt the time of selecting topics, the only thing I was sure of was that I wanted to do a project on AI and writing but I did not know the specific form or question I was going to look at. Thus, my topic evolved from looking at AI policies of First Year Writing classes, to looking at themes in ethical concerns about the use of ChatGPT, and, eventually, the topic became what it is right now, looking at how folks in academia and the technical writing industry talk about AI and the themes that arise from the conversations in those contexts.\nMy aim for conducting such a comparative study and not just looking from one angle was to try to deduce from the conversations if there are gaps in how academia is preparing students for the industry which is being heavily permeated by AI writing tools. That is, I was curious about whether there are certain critical topics in the technical writing industry’s discussion on AI that academia is not considering. Finding and addressing these gaps could help academia better equip students for the industry. I did not end up answering this question but I think that a deeper comparative study on this topic would be very helpful in identifying some of those gaps."
+  },
+  {
+    "objectID": "index.html#methodology",
+    "href": "index.html#methodology",
+    "title": "Themes in AI Discourse: r/Academia vs. r/Technicalwriting",
+    "section": "Methodology",
+    "text": "Methodology\nI decided on using computational methods for this study in order to get further practice, and a better understanding of at least one of the computational methods I have been introduced to in this class.This was my way of developing my “coding literacy”. As Vee (2017) states, the affordances coding, and by extension, computational methods provide make them a very significant tool in various contexts. Therefore, with my professional development in mind, I wanted to leave this class with some level of experience with computational methods and I knew the best way to do that was to engage computational methods in this project even though my expertise on the method was not the best. Among the computational methods we explored in this class, which include citation analysis, sentiment analysis and network analysis, topic modeling felt the best suited for the kind of work I was doing in this project. According to Miller (2022), topic modeling has been applied to various corpus to identify trendlines in various areas of concern (p. 32). This ability of topic modeling to point out trends in data through the topics it generates makes it good for exploratory works like what I set out to do in this project."
+  },
+  {
+    "objectID": "index.html#source-of-data",
+    "href": "index.html#source-of-data",
+    "title": "Themes in AI Discourse: r/Academia vs. r/Technicalwriting",
+    "section": "Source of Data",
+    "text": "Source of Data\nFor this project, I collected my data from two relevant subreddits - r/academia and r/technical writing. With Reddit, there are communities or subreddits dedicated to various interests and are often named according to those interests. Therefore, it was quite easy to find subreddits on academia and technical writing by just searching those terms. This was a very convenient and easy way of getting access to the data I needed for this work. I provide detailed descriptions of these two subreddits and outline my data collection process from each on their respective dedicated web pages."
+  },
+  {
+    "objectID": "Lessons.html",
+    "href": "Lessons.html",
+    "title": "Lessons",
+    "section": "",
+    "text": "I have become more aware of some weaknesses of automated methods. Doing this work computationally confirmed some of the concerns raised by Lauer et al.(2018) in their work. One of the concerns they express is that automated methods of data collection like webscraping should not be concluded as the best over manual methods of data collection because “automated data collection methods are likely to introduce errors into a data set by mistakenly introducing irrelevant data” (391). After using an automated data collection method in this work, I could not agree more with this observation. Most of the problems I encountered in my analysis was because a lot of irrelevant data had been pulled through my scrape of the subreddits. Going into this project, I assumed my code could automatically sift through the data and pick only relevant ones but that did not happen. I am in no way undermining automated methods. In fact, I really appreciate the time it saved me and the amount of work it allowed me do in a very limited time period. However, this experience has me agreeing very much with Schafer and Hase (2013) and Lauer et al’s (2018) call for mixed approaches in research. From this, I have been reminded once again that instead of pitching certain methods as better or worse than others, it is better to engage methods more thoughtfully and in a complementary manner.\nComputational methods are not objective. Looking at how much I had to manipulate the data by removing rows and words, I have learnt that computational methods can be as subjective as manual methods because a lot of the decisions made in this project were based on my own subjective reasoning, understanding, and what I was looking for in this project. As such, the results of this research, even though mostly done computationally, are still very subjective.\nPractice makes perfect! I am very surprised at how much I have learnt about topic modeling in doing this research. I started this work not knowing much beyond clicking “command+return” to run prewritten codes. Doing this project and struggling through errors, identifying problems and trying to find possible solutions have given me a deeper understanding of this method, and if I were to do this again, things would be very different."
+  },
+  {
+    "objectID": "Lessons.html#observations",
+    "href": "Lessons.html#observations",
+    "title": "Lessons",
+    "section": "",
+    "text": "I have become more aware of some weaknesses of automated methods. Doing this work computationally confirmed some of the concerns raised by Lauer et al.(2018) in their work. One of the concerns they express is that automated methods of data collection like webscraping should not be concluded as the best over manual methods of data collection because “automated data collection methods are likely to introduce errors into a data set by mistakenly introducing irrelevant data” (391). After using an automated data collection method in this work, I could not agree more with this observation. Most of the problems I encountered in my analysis was because a lot of irrelevant data had been pulled through my scrape of the subreddits. Going into this project, I assumed my code could automatically sift through the data and pick only relevant ones but that did not happen. I am in no way undermining automated methods. In fact, I really appreciate the time it saved me and the amount of work it allowed me do in a very limited time period. However, this experience has me agreeing very much with Schafer and Hase (2013) and Lauer et al’s (2018) call for mixed approaches in research. From this, I have been reminded once again that instead of pitching certain methods as better or worse than others, it is better to engage methods more thoughtfully and in a complementary manner.\nComputational methods are not objective. Looking at how much I had to manipulate the data by removing rows and words, I have learnt that computational methods can be as subjective as manual methods because a lot of the decisions made in this project were based on my own subjective reasoning, understanding, and what I was looking for in this project. As such, the results of this research, even though mostly done computationally, are still very subjective.\nPractice makes perfect! I am very surprised at how much I have learnt about topic modeling in doing this research. I started this work not knowing much beyond clicking “command+return” to run prewritten codes. Doing this project and struggling through errors, identifying problems and trying to find possible solutions have given me a deeper understanding of this method, and if I were to do this again, things would be very different."
+  },
+  {
+    "objectID": "Lessons.html#references",
+    "href": "Lessons.html#references",
+    "title": "Lessons",
+    "section": "References",
+    "text": "References\nCook, J. [James Cook]. (2023, April, 17). Extracting Reddit Data With R and the package RedditExtractoR (2023 Update)[Video]. YouTube. https://www.youtube.com/watch?v=Snm0Azfi_hc\nLauer, C., Brumberger, E., & Beveridge, A. (2018). Hand collecting and coding versus data-driven methods in technical and professional communication research. IEEE Transactions on Professional Communication, 61(4), 389-408.\nMiller, B. (2022). Distant Readings of Disciplinarity: Knowing and Doing in Composition/rhetoric Dissertations. University Press of Colorado.\nSchäfer, M. S., & Hase, V. (2023). Computational methods for the analysis of climate change communication: Towards an integrative and reflexive approach. Wiley Interdisciplinary Reviews: Climate Change, 14(2), e806.\nSilge, J. (2018). Training, evaluating, and interpreting topic models. Julia Silge, 8, 2018.\nVee, A. (2017). Coding literacy: How computer programming is changing writing. Mit Press."
+  }
+]

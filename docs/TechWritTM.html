@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.433">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Final Project - r/Technicalwriting Corpus</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Final Project</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html" rel="" target="">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./TechWritTM.html" rel="" target="" aria-current="page">
+ <span class="menu-text">r/Technicalwriting Corpus</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./AcademiaTM.html" rel="" target="">
+ <span class="menu-text">r/Academia Corpus</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./Lessons.html" rel="" target="">
+ <span class="menu-text">Lessons</span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools ms-auto">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#about-rtechnicalwriting" id="toc-about-rtechnicalwriting" class="nav-link active" data-scroll-target="#about-rtechnicalwriting">About r/technicalwriting</a></li>
+  <li><a href="#initial-scrape-unsuccessful" id="toc-initial-scrape-unsuccessful" class="nav-link" data-scroll-target="#initial-scrape-unsuccessful">Initial Scrape (Unsuccessful)</a>
+  <ul class="collapse">
+  <li><a href="#subsetting-initial-data-with-grep" id="toc-subsetting-initial-data-with-grep" class="nav-link" data-scroll-target="#subsetting-initial-data-with-grep">Subsetting Initial Data With Grep</a></li>
+  </ul></li>
+  <li><a href="#second-scrape-successful" id="toc-second-scrape-successful" class="nav-link" data-scroll-target="#second-scrape-successful">Second Scrape (Successful)</a></li>
+  <li><a href="#manual-reading-and-exclusion-of-irrelevant-rows" id="toc-manual-reading-and-exclusion-of-irrelevant-rows" class="nav-link" data-scroll-target="#manual-reading-and-exclusion-of-irrelevant-rows">Manual Reading and Exclusion of Irrelevant Rows</a></li>
+  <li><a href="#preprocessing-and-topic-modeling" id="toc-preprocessing-and-topic-modeling" class="nav-link" data-scroll-target="#preprocessing-and-topic-modeling">Preprocessing and Topic Modeling</a></li>
+  <li><a href="#choosing-k-for-topic-modeling" id="toc-choosing-k-for-topic-modeling" class="nav-link" data-scroll-target="#choosing-k-for-topic-modeling">Choosing K for Topic Modeling</a>
+  <ul class="collapse">
+  <li><a href="#k40" id="toc-k40" class="nav-link" data-scroll-target="#k40">K=40</a></li>
+  <li><a href="#k70" id="toc-k70" class="nav-link" data-scroll-target="#k70">K=70</a></li>
+  <li><a href="#k80" id="toc-k80" class="nav-link" data-scroll-target="#k80">K=80</a></li>
+  </ul></li>
+  <li><a href="#interpreting-topics" id="toc-interpreting-topics" class="nav-link" data-scroll-target="#interpreting-topics">Interpreting Topics</a>
+  <ul class="collapse">
+  <li><a href="#topics-of-interest-and-my-interpretation-of-them" id="toc-topics-of-interest-and-my-interpretation-of-them" class="nav-link" data-scroll-target="#topics-of-interest-and-my-interpretation-of-them">Topics of Interest and My Interpretation of Them</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">r/Technicalwriting Corpus</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="about-rtechnicalwriting" class="level2">
+<h2 class="anchored" data-anchor-id="about-rtechnicalwriting">About r/technicalwriting</h2>
+<p>This is a subreddit with a little over 70,000 members. The subreddit is self-described as “For people who take the unbelievably complicated things that scientists and engineers devise and make it understandable for non-technical people.”</p>
+</section>
+<section id="initial-scrape-unsuccessful" class="level2">
+<h2 class="anchored" data-anchor-id="initial-scrape-unsuccessful">Initial Scrape (Unsuccessful)</h2>
+<p>I conducted an initial scrape of coments from r/technicalwriting with the Keyword “AI”, and the period set to “All”. 87 threads and 997 comments were collected from this scrape. Working with this particular dataset, I realized that I was not really getting any specific topics, a problem I traced to my keyword term. I had assumed that a subreddit on technical writing would automatically be talking about AI in the context of writing so I did not find it needful to use “writing” as a keyword. However, with the results I was getting, I realized my mistake. AI is a broad topic and conversations on AI could be about a lot of things other than writing and, Technical Writers, contrary to what the name of the occupation suggests do more than just writing.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>TW <span class="ot">&lt;-</span> <span class="fu">find_thread_urls</span>(</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">subreddit =</span> <span class="st">"technicalwriting"</span>,</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">keywords =</span> <span class="st">"AI"</span>,</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">sort_by =</span> <span class="st">"comments"</span>,</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">period =</span> <span class="st">"All"</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="subsetting-initial-data-with-grep" class="level3">
+<h3 class="anchored" data-anchor-id="subsetting-initial-data-with-grep">Subsetting Initial Data With Grep</h3>
+<p>After I realized what had gone wrong with this data, I tried to create a subset of the data using the “grep” function.This was not easy because I could not even decide on which pattern of words to use as my research question itself is not the most specific. I tried to use words that express opnion like “helpful”, “bad”, “ethic”, “good”, among others but it was just not working so I decided to put this data set aside and go in for another scrape.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>TWsubset <span class="ot">&lt;-</span> <span class="fu">grep</span>(<span class="at">pattern =</span> <span class="st">"use AI|influence|view|opinion|useful|bad|ethic|helpful"</span>, CommentsTM<span class="sc">$</span>comment, <span class="at">value =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(TWsubset)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="second-scrape-successful" class="level2">
+<h2 class="anchored" data-anchor-id="second-scrape-successful">Second Scrape (Successful)</h2>
+<p>For the second scrape I used “AI” and “Writing” as my keywords and set the period set to “Year” which produced 36 threads and 540 comments. Also, I conducted my analysis with only comments not threads as that is where I could find different perspectives on the topic. Next, I conducted a first cleaning of the data to retain just the comments, comment_id, and url columns but i ended up only needing the comments column. I initially planned to bind the comments from both subreddits but I did not so I did not really need the url column as well. With my data cleaned up, I saved it out as a CSV file, read it into a different Rscript, processed the data and run another topic model analysis. Once again,the topics were not really meaningful and certain irrelevant words like modal verbs were dominating the topics, indicating to me that I still had to clean up the data some more. Below is a visual of the said topics.</p>
+<p><img src="techwrit 540.png" class="img-fluid"> Code used for scraping, cleaning and saving comments from r/technicalwriting</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="do">##Scrape threads and extract comments</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>TW <span class="ot">&lt;-</span> <span class="fu">find_thread_urls</span>(</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">subreddit =</span> <span class="st">"technicalwriting"</span>,</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">keywords =</span> <span class="st">"AI,writing"</span>,</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">sort_by =</span> <span class="st">"comments"</span>,</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">period =</span> <span class="st">"year"</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(TW)</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>TW_comments <span class="ot">&lt;-</span> <span class="fu">get_thread_content</span>(</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>  TW<span class="sc">$</span>url</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="do">##Clean comments data to retain relevant columns</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>TWcleam_select <span class="ot">&lt;-</span> TWclean1<span class="sc">$</span>comments <span class="sc">%&gt;%</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(comment, comment_id, url)</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(TWcleam_select)</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="do">##Save comments as a CSV file</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(TWcleam_select, <span class="st">"data_out/TWcleam_select.csv"</span>)</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a><span class="fu">save</span>(TWcleam_select, <span class="at">file =</span> <span class="st">"data_out/TWcleam_select.RData"</span>)</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="manual-reading-and-exclusion-of-irrelevant-rows" class="level2">
+<h2 class="anchored" data-anchor-id="manual-reading-and-exclusion-of-irrelevant-rows">Manual Reading and Exclusion of Irrelevant Rows</h2>
+<p>With the realization that I was not getting specific and meaningful topics from the r/technicalwriting comments, I went in and read the comments manually and noted the rows of comments that had wandered too far from conversations on AI and writing. Next, with the help of ChatGPT, I wrote a code that excluded those irrelevant rows. In all, I excluded 284 rows of comments from the 540 comments I generated from the second scrape.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>CommentsTM <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data_out/TWcleam_select.csv"</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(CommentsTM)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>rows_to_exclude <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">8</span>, <span class="dv">21</span>, <span class="dv">27</span>, <span class="dv">28</span>, <span class="dv">29</span>, <span class="dv">31</span>, <span class="dv">36</span>, <span class="dv">58</span>, <span class="dv">59</span>, <span class="dv">60</span>, <span class="dv">62</span>, <span class="dv">65</span>, <span class="dv">66</span>, <span class="dv">67</span>, <span class="dv">68</span>, <span class="dv">74</span>, <span class="dv">73</span>, <span class="dv">75</span>, <span class="dv">76</span>, <span class="dv">77</span>, <span class="dv">78</span>, <span class="dv">79</span>, <span class="dv">80</span>, <span class="dv">83</span>, <span class="dv">84</span>, <span class="dv">86</span>, <span class="dv">87</span>, <span class="dv">88</span>, <span class="dv">90</span>, <span class="dv">91</span>, <span class="dv">92</span>, <span class="dv">93</span>, <span class="dv">94</span>, <span class="dv">95</span>, <span class="dv">96</span>, <span class="dv">97</span>, <span class="dv">98</span>, <span class="dv">102</span>, <span class="dv">103</span>, <span class="dv">104</span>, <span class="dv">105</span>, <span class="dv">106</span>, <span class="dv">107</span>, <span class="dv">108</span>, <span class="dv">109</span>, <span class="dv">110</span>, <span class="dv">111</span>, <span class="dv">112</span>, <span class="dv">113</span>, <span class="dv">114</span>, <span class="dv">115</span>, <span class="dv">116</span>, <span class="dv">117</span>, <span class="dv">118</span>, <span class="dv">119</span>, <span class="dv">120</span>, <span class="dv">121</span>, <span class="dv">122</span>, <span class="dv">123</span>, <span class="dv">124</span>, <span class="dv">125</span>, <span class="dv">126</span>, <span class="dv">127</span>, <span class="dv">128</span>, <span class="dv">129</span>, <span class="dv">130</span>, <span class="dv">131</span>, <span class="dv">132</span>, <span class="dv">133</span>, <span class="dv">134</span>, <span class="dv">135</span>, <span class="dv">136</span>, <span class="dv">137</span>, <span class="dv">138</span>, <span class="dv">139</span>, <span class="dv">140</span>, <span class="dv">141</span><span class="sc">:</span><span class="dv">233</span>, <span class="dv">262</span>, <span class="dv">271</span>, <span class="dv">274</span>, <span class="dv">276</span>, <span class="dv">278</span>, <span class="dv">280</span>, <span class="dv">289</span><span class="sc">:</span><span class="dv">314</span>, <span class="dv">421</span><span class="sc">:</span><span class="dv">485</span>, <span class="dv">538</span>, <span class="dv">537</span>, <span class="dv">536</span>, <span class="dv">533</span>, <span class="dv">527</span>, <span class="dv">526</span>, <span class="dv">525</span>, <span class="dv">524</span>, <span class="dv">523</span>, <span class="dv">521</span>, <span class="dv">520</span>, <span class="dv">516</span>, <span class="dv">511</span>, <span class="dv">512</span>, <span class="dv">508</span>, <span class="dv">504</span>)  </span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Exclude specific row numbers</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>CommentsTM <span class="ot">&lt;-</span> CommentsTM[<span class="sc">-</span>rows_to_exclude, ]</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="preprocessing-and-topic-modeling" class="level2">
+<h2 class="anchored" data-anchor-id="preprocessing-and-topic-modeling">Preprocessing and Topic Modeling</h2>
+<p>After excluding those rows, I continued processing the data for topic modeling. This preprocessing included creating a corpus of the comments, tokenizing the corpus, removing stopwords, sparsing the tokens, and creating a document feature matrix of the tokens. I also excluded the irrelevant topwords, which included the modal verbs I mentioned earlier, so that they would not dominate the topics.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="do">### Create a corpus object from the "comments" column</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>commentcorpus <span class="ot">&lt;-</span> <span class="fu">corpus</span>(CommentsTM, <span class="at">text_field =</span> <span class="st">"comment"</span>)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a tokens object (punctuations, stopwords, and irrelevant topwords removed)</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>commenttokens <span class="ot">&lt;-</span> <span class="fu">tokens</span>(commentcorpus, <span class="at">remove_punct =</span> <span class="cn">TRUE</span>,<span class="at">remove_url =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tokens_select</span>(<span class="at">pattern =</span> <span class="fu">stopwords</span>(<span class="st">"en"</span>), <span class="at">selection =</span> <span class="st">"remove"</span>)<span class="sc">%&gt;%</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tokens_select</span>(<span class="at">pattern =</span> <span class="fu">c</span>(<span class="st">"can"</span>, <span class="st">"like"</span>, <span class="st">"just"</span>, <span class="st">"will"</span>, <span class="st">"t"</span>, <span class="st">"s"</span>, <span class="st">"m"</span>, <span class="st">"thanks"</span>, <span class="st">"don"</span>, <span class="st">"comment"</span>, <span class="st">"thank"</span>, <span class="st">"ux"</span>, <span class="st">"certification"</span>, <span class="st">"certificate"</span>, <span class="st">"tw"</span>, <span class="st">"technical"</span>, <span class="st">"tech"</span>, <span class="st">"job"</span>,<span class="st">"get"</span>, <span class="st">"writing"</span>, <span class="st">"deleted"</span>), <span class="at">selection =</span> <span class="st">"remove"</span>)</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="co">#We'll create the dfm.</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>dfm_commenttoks <span class="ot">&lt;-</span> <span class="fu">dfm</span>(commenttokens) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">dfm_trim</span>(<span class="at">min_docfreq =</span> <span class="fl">0.0001</span>,</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>           <span class="at">max_docfreq =</span> <span class="fl">0.99</span>, <span class="at">docfreq_type =</span> <span class="st">"prop"</span>,</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>           <span class="at">verbose =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a><span class="fu">topfeatures</span>(dfm_commenttoks, <span class="at">n =</span> <span class="dv">20</span>, <span class="at">scheme =</span> <span class="st">"docfreq"</span>)</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a><span class="do">### Convert dfm to stm</span></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>dfm_stmcomments <span class="ot">&lt;-</span> <span class="fu">convert</span>(dfm_commenttoks, <span class="at">to =</span> <span class="st">"stm"</span>, <span class="at">omit_empty =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="choosing-k-for-topic-modeling" class="level2">
+<h2 class="anchored" data-anchor-id="choosing-k-for-topic-modeling">Choosing K for Topic Modeling</h2>
+<p>I tried using Julia Silge’s code for modeling K to find the K value with the highest exclusivity and semantic coherence but try as I did, I just could not get it to work. So, I randomly run my topic model with the K value set at 40, 50, 60, 70 , 80 and even 100. I realized that the topics were not very meaningful at the lowest (40 and 50) and the highest (100) values. However, the topics at K= 60 and 80 also looked almost but not completely meaningful so I chose to go with a number that fell between these two, 70, and it worked. The topics at k=70 made sense and were also interesting to me so I decided to go with that. Below are visuals of the topics from the different K values.</p>
+<section id="k40" class="level3">
+<h3 class="anchored" data-anchor-id="k40">K=40</h3>
+<p><img src="TW- k=40.jpeg" class="img-fluid"></p>
+</section>
+<section id="k70" class="level3">
+<h3 class="anchored" data-anchor-id="k70">K=70</h3>
+<p><img src="TWcomms- k=70*.png" class="img-fluid"></p>
+</section>
+<section id="k80" class="level3">
+<h3 class="anchored" data-anchor-id="k80">K=80</h3>
+<p><img src="images/TW80.jpeg" class="img-fluid"></p>
+</section>
+</section>
+<section id="interpreting-topics" class="level2">
+<h2 class="anchored" data-anchor-id="interpreting-topics">Interpreting Topics</h2>
+<p>I interpreted the topics generated in the topic model by considering the highest probability words and the FREX. My interpretation of the topics was also influenced by my familiarity with some of the themes in the data. Through my manual reading of the data, I mentally noted some themes that were emerging for me so it was quite easy for me to identify those themes I had already noted when reading the topics generated by the Topic Model. I am going to use Topic 58 from the topic model as an example.</p>
+<pre><code>Topic 58 
+     Highest Prob: company, ai, policy, chatgpt, legal, asked, document, made, issues, regex, decisions, list, write, work, sure 
+     FREX: policy, regex, legal, decisions, company, issues, affected, app, emergency, journals, ndas, asked, list, copyright, poem 
+</code></pre>
+<p>With this topic, words like “policy”, “ai”, and “company” made it easy for me to come to the basic conclusion that the topic was on company policies around technical writers’ use of AI. I then went into the corpus and searched “company policies” and from the conversations, I got the added layer of understanding that this topic is about AI policies of companies and how those policies are shaped by possible legal and copyright implications. My interpretation of all the other topics followed this same process.</p>
+<section id="topics-of-interest-and-my-interpretation-of-them" class="level3">
+<h3 class="anchored" data-anchor-id="topics-of-interest-and-my-interpretation-of-them">Topics of Interest and My Interpretation of Them</h3>
+<pre><code>Topic 51- Non-technical writers (Developers) are generating documentation on their own
+     Highest Prob: documentation, ai, code, api, generate, product, user, tool, devs, ask, think, manual, training, software, questions 
+     FREX: devs, api, documentation, longer, explanations, ingest, jeopardy, watson, granted, code, generate, developers, manual, tool, parse 
+
+Topic 58- Company policies on AI and the legal implications of AI use
+     Highest Prob: company, ai, policy, chatgpt, legal, asked, document, made, issues, regex, decisions, list, write, work, sure 
+     FREX: policy, regex, legal, decisions, company, issues, affected, app, emergency, journals, ndas, asked, list, copyright, poem 
+
+Topic 59- Top Words: Job security concerns
+     Highest Prob: replace, ai, writers, security, robots, take, need, still, said, thing, see, capable, tool, give, next 
+     FREX: robots, replace, security, capable, redundant, ^, whole, laid, thing, next, managers, making, tool, industries, writers 
+</code></pre>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
