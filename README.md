@@ -1,2 +1,2 @@
-# Comp-Rhet-FInal
+# Comp-Rhet-Final
 Computational Rhetoric Experience Report 
